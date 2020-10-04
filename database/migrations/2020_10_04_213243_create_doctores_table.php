@@ -15,6 +15,10 @@ class CreateDoctoresTable extends Migration
     {
         Schema::create('doctores', function (Blueprint $table) {
             $table->id();
+            $table->String('nombre');
+            $table->String('especialidad');
+            $table->String('num. cedula');
+            $table->String('descripcion');
             $table->timestamps();
         });
     }

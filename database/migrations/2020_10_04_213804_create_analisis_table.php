@@ -18,7 +18,7 @@ class CreateAnalisisTable extends Migration
             $table->String('nombre');
             $table->String('tipoAnalisis');
             $table->String('descripcion');
-            $table->int('precio')
+            $table->int('precio');
             $table->timestamps();
         });
     }
