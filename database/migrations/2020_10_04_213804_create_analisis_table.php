@@ -20,6 +20,8 @@ class CreateAnalisisTable extends Migration
             $table->String('descripcion');
             $table->int('precio');
             $table->timestamps();
+            $table->foreign('iddoctor')->references('id')
+            ->on('doctores');
         });
     }
 
