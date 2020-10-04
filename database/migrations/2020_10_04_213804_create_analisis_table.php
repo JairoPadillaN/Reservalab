@@ -14,13 +14,14 @@ class CreateAnalisisTable extends Migration
     public function up()
     {
         Schema::create('analisis', function (Blueprint $table) {
-            $table->bigIncrement('id');
+            $table->id('id_analisis');
             $table->String('nombre');
             $table->String('tipoAnalisis');
             $table->String('descripcion');
-            $table->int('precio');
+            $table->integer('precio');
             $table->timestamps();
-            $table->foreign('iddoctor')->references('id')
+            
+            $table->foreign('$id_doctores')->references('id')
             ->on('doctores');
         });
     }
