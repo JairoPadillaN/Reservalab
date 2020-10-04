@@ -16,5 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/Helloworld', '/Materias/controllerMaterias@index');
+Route::get('Helloworld', function(){
+    return view('helloworld');
+ });
+ Route::get('investigacion', function (){
+      return View::make ('investigacion'); 
+});
+
+
+
 
