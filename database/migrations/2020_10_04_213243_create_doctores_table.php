@@ -17,7 +17,7 @@ class CreateDoctoresTable extends Migration
             $table->id();
             $table->String('nombre');
             $table->String('especialidad');
-            $table->String('num. cedula');
+            $table->String('cedula');
             $table->String('descripcion');
             $table->timestamps();
         });
