@@ -20,7 +20,7 @@ Route::get('Helloworld', function(){
     return view('helloworld');
  });
  Route::get('investigacion', function (){
-      return View::make ('investigacion'); 
+      return View::make ('investigacion');
 });
 
 
