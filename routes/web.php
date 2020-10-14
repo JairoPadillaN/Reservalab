@@ -14,11 +14,16 @@ use App\Http\Controllers\UsuariosController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', HomeController::class);
 Route::get('usuarios', [UsuariosController::class, 'index']);
 Route::get('usuarios/create', [UsuariosController::class, 'create']);
 Route::get('usuarios/{usuario}', [UsuariosController::class, 'show']);
+*/
+Route::group(['prefix'=>'api'], function (){
+    Route::apiResource('usuarios', UsuariosController::class);
+    
+    });
 /*   
 Route::get('Helloworld', function(){
     return view('helloworld');

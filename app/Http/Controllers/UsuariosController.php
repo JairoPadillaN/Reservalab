@@ -5,9 +5,21 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Usuario;
+use App\Http\Requests\StoreUsuario;
+use App\Http\Requests\Usuarios;
 
 class UsuariosController extends Controller
 {
+    public function _construct (Usuario $usuario){
+        $this->usuario=$usuario;
+    }
+    
+    public function store(Usuarios $request){
+        return $request;
+        $usuario= $this->usuario->create($request->all());
+        return $usuario;
+        return response()->json(new Usuario(), 201);
+    }
     public function index(){
         $usuarios = Usuario::all();
         return $usuarios;
