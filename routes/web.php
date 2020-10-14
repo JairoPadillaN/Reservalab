@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UsuariosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,9 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', HomeController::class);
+Route::get('usuarios', [UsuariosController::class, 'index']);
+Route::get('usuarios/create', [UsuariosController::class, 'create']);
+Route::get('usuarios/{usuario}', [UsuariosController::class, 'show']);
+/*   
 Route::get('Helloworld', function(){
     return view('helloworld');
  });
@@ -23,6 +27,6 @@ Route::get('Helloworld', function(){
       return View::make ('investigacion'); 
 });
 
-
+*/
 
 

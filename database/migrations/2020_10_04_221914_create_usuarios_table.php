@@ -18,9 +18,7 @@ class CreateUsuariosTable extends Migration
             $table->String('nombre');
             $table->String('apellidos');
             $table->String('email');
-            $table->String('contrasenia');
-            $table->foreign('id_analisis')->references('id')->on('analisis');
-            $table->foreign('id_medico')->references('id')->on('doctores');
+            $table->String('contraseña');
             $table->timestamps();
         });
     }
