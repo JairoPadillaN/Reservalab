@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePruebaTable extends Migration
+class CreateInfoMedicaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreatePruebaTable extends Migration
      */
     public function up()
     {
-        Schema::create('prueba', function (Blueprint $table) {
+        Schema::create('info_medica', function (Blueprint $table) {
             $table->id();
-            $table->String('tipo_estudio');
-            $table->String('estudio');
-            $table->float('precio');
+            $table->float('peso');
+            $table->float('altura');
+            $table->String('tipoSanguineo');
+            $table->String('padecimientos');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +31,6 @@ class CreatePruebaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prueba');
+        Schema::dropIfExists('info_medica');
     }
 }

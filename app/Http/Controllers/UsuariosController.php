@@ -15,10 +15,16 @@ class UsuariosController extends Controller
     }
     
     public function store(Usuarios $request){
+        $usuarios=new Usuarios();
+        $usuarios->nombre='Eber';
+        $usuarios->apellidos='Palma';
+        $usuarios->email='1234@gmail.com';
+        $usuarios->contraseña='sameasother';
+        $usuarios->save();
         return $request;
-        $usuario= $this->usuario->create($request->all());
-        return $usuario;
-        return response()->json(new Usuario(), 201);
+        //$usuario= $this->usuario->create($request->all());
+        //return $usuario;
+        //return response()->json(new Usuario(), 201);
     }
     public function index(){
         $usuarios = Usuario::all();

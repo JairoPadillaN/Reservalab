@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePruebaTable extends Migration
+class CreateCitasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreatePruebaTable extends Migration
      */
     public function up()
     {
-        Schema::create('prueba', function (Blueprint $table) {
+        Schema::create('citas', function (Blueprint $table) {
             $table->id();
-            $table->String('tipo_estudio');
-            $table->String('estudio');
-            $table->float('precio');
+            $table->integer('idUsuario');
+            $table->integer('idMedico');
+            $table->String('tipoAlanizis');
+            $table->String('fecha');
+            $table->String('hora');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -30,6 +32,6 @@ class CreatePruebaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prueba');
+        Schema::dropIfExists('citas');
     }
 }

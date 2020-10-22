@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PruebaController extends Controller
+class DoctoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class PruebaController extends Controller
      */
     public function index()
     {
-        $prueba=Prueba::all();
-        return($prueba->toJson());
+        $doctores= Doctores::all();
+        return($doctores->toJson());
     }
 
     /**
@@ -47,8 +47,8 @@ class PruebaController extends Controller
      */
     public function show($id)
     {
-        $prueba= Prueba::all()->where('id',$id);
-        return($prueba->toJson());
+        $doctores= Doctores::all()->where('id',$id);
+        return($doctores->toJson());
     }
 
     /**
