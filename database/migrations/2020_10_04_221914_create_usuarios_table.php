@@ -19,6 +19,7 @@ class CreateUsuariosTable extends Migration
             $table->String('apellidos');
             $table->String('email');
             $table->String('contraseña');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

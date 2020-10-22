@@ -15,11 +15,12 @@ use App\Http\Controllers\UsuariosController;
 |
 */
 /*
-Route::get('/', HomeController::class);
+
 Route::get('usuarios', [UsuariosController::class, 'index']);
 Route::get('usuarios/create', [UsuariosController::class, 'create']);
 Route::get('usuarios/{usuario}', [UsuariosController::class, 'show']);
 */
+Route::get('/', HomeController::class);
 Route::group(['prefix'=>'api'], function (){
     Route::apiResource('usuarios', UsuariosController::class);
     
