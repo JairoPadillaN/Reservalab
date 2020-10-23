@@ -23,8 +23,12 @@ Route::get('usuarios/{usuario}', [UsuariosController::class, 'show']);
 Route::get('/', HomeController::class);
 Route::group(['prefix'=>'api'], function (){
     Route::apiResource('usuarios', UsuariosController::class);
-    
+    //Route::apiResource('doctores', DoctoresController::class);
+    //Route::apiResource('cita', CitaController::class);
+    //Route::apiResource('info_medica',Info_medicaController::class);
+    //Route::apiResource('prueba',PruebaController::class);
     });
+    
 /*   
 Route::get('Helloworld', function(){
     return view('helloworld');
