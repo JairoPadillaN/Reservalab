@@ -17,4 +17,9 @@ class info_medica extends Model
         'tipoSanguineo',
         'padecimientos',
     ];
+
+    //Relaciones 
+    public function usuarios(){
+        return $this->hasMany(Usuario::class);
+    }
 }

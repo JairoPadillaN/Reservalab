@@ -14,7 +14,7 @@ class CreateDoctoresTable extends Migration
     public function up()
     {
         Schema::create('doctores', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->String('nombre');
             $table->String('especialidad');
             $table->String('cedula');

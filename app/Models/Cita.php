@@ -18,4 +18,8 @@ class Cita extends Model
         'fecha',
         'hora',
     ];
+//Relaciones 
+    public function usuarios(){
+        return $this->hasMany(Usuario::class);
+    }
 }

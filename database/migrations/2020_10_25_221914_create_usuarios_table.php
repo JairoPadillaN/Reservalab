@@ -19,6 +19,15 @@ class CreateUsuariosTable extends Migration
             $table->String('apellidos');
             $table->String('email');
             $table->String('contraseña');
+            $table->unsignedInteger('doctor_id');
+            $table->foreign('doctor_id')->references('id')->on('doctores');
+            $table->unsignedInteger('analisis_id');
+            $table->foreign('analisis_id')->references('id')->on('analisis');
+            $table->unsignedInteger('infomedica_id');
+            $table->foreign('infomedica_id')->references('id')->on('infomed');
+            $table->unsignedInteger('cita_id');
+            $table->foreign('cita_id')->references('id')->on('citas');
+            $table->String('descripcion');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -17,4 +17,12 @@ class Doctores extends Model
         "cedula",
         "descripcion",
     ];
+//Relaciones 
+    public function usuarios(){
+        return $this->hasMany(Usuario::class);
+    }
+    public function analisis(){
+        return $this->hasMany(Analisis::class);
+    }
+
 }

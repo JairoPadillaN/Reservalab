@@ -7,8 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Usuario extends Model
 {
-    use HasFactory;
-
+    
     protected $table="usuarios";
 
     protected $fillable=[
@@ -18,4 +17,24 @@ class Usuario extends Model
         'email',
         'contraseña',
     ];
+
+    //Relaciones 
+    public function analisis(){
+        return $this->belongsTo(Anlisis::class);
+    }
+    public function doctores(){
+        return $this->belongsTo(Doctores::class,);
+    }
+    
+    public function pruebas(){
+        return $this->belongsTo(Prueba::class);
+    }
+    public function citas(){
+        return $this->belongsTo(Cita::class);
+    }
+    public function infomed(){
+        return $this->belongsTo(info_medica::class);
+    }
+    
+    
 }
