@@ -40,7 +40,9 @@ class CitaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campos=$request->all();
+        $cita=Cita::create($campos);
+        return($cita->toJson());
     }
 
     /**

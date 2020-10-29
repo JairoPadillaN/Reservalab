@@ -37,7 +37,9 @@ class Info_medicaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campos=$request->all();
+        $info_medica=info_medica::create($campos);
+        return($info_medica->toJson());
     }
 
     /**

@@ -37,7 +37,9 @@ class DoctoresController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campos=$request->all();
+        $doctores=Doctores::create($campos);
+        return($doctores->toJson());
     }
 
     /**

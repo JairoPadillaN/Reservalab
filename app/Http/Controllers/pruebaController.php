@@ -37,7 +37,9 @@ class PruebaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $campos=$request->all();
+        $prueba= Prueba::create($campos);
+        return($prueba->toJson());
     }
 
     /**

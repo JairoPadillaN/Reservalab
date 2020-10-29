@@ -17,7 +17,7 @@ class UsuariosController extends Controller
     public function store(Usuarios $request){
         $campos=$request->all();
         $usuario= Usuario::create($campos);
-        return $request;
+        return($usuario->toJson());
         //$usuario= $this->usuario->create($request->all());
         //return $usuario;
         //return response()->json(new Usuario(), 201);
