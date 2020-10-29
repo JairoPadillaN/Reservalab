@@ -15,12 +15,8 @@ class UsuariosController extends Controller
     }
     
     public function store(Usuarios $request){
-        $usuarios=new Usuarios();
-        $usuarios->nombre='Eber';
-        $usuarios->apellidos='Palma';
-        $usuarios->email='1234@gmail.com';
-        $usuarios->contraseña='sameasother';
-        $usuarios->save();
+        $campos=$request->all();
+        $usuario= Usuario::create($campos);
         return $request;
         //$usuario= $this->usuario->create($request->all());
         //return $usuario;
