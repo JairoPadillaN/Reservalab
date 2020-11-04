@@ -39,4 +39,8 @@ class UsuariosController extends Controller
         return view('Usuarios.show',compact('usuario'));
 
     }
+
+    public function destroy($usuario){
+        $usuario->delete();
+    }
 }
