@@ -16,31 +16,31 @@ class UsuariosController extends Controller
     
     public function store(Usuarios $request){
         $campos=$request->all();
-        $usuario= Usuario::create($campos);
+        $usuario= Users::create($campos);
         return($usuario->toJson());
         //$usuario= $this->usuario->create($request->all());
         //return $usuario;
         //return response()->json(new Usuario(), 201);
     }
     public function index(){
-        $usuarios = Usuario::all();
+        $usuarios = Users::all();
         return $usuarios;
-        return view('Usuarios.index');
+        return view('Users.index');
     }
     public function create(){
-        return view('Usuarios.create');
+        return view('Users.create');
 
     }
     public function show($id){
 
-        $usuario = Usuario::find($id);
+        $usuario = Users::find($id);
         return $usuario;
 
-        return view('Usuarios.show',compact('usuario'));
+        return view('Users.show',compact('user'));
 
     }
 
-    public function destroy($usuario){
-        $usuario->delete();
+    public function destroy($user){
+        $user->delete();
     }
 }

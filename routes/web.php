@@ -20,7 +20,7 @@ Route::get('usuarios', [UsuariosController::class, 'index']);
 Route::get('usuarios/create', [UsuariosController::class, 'create']);
 Route::get('usuarios/{usuario}', [UsuariosController::class, 'show']);
 */
-Route::get('/', HomeController::class);
+Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'api'], function (){
     Route::apiResource('usuarios', UsuariosController::class);
     Route::apiResource('doctores', DoctoresController::class);
@@ -40,3 +40,7 @@ Route::get('Helloworld', function(){
 */
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
