@@ -20,6 +20,8 @@ Route::get('usuarios', [UsuariosController::class, 'index']);
 Route::get('usuarios/create', [UsuariosController::class, 'create']);
 Route::get('usuarios/{usuario}', [UsuariosController::class, 'show']);
 */
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/estudios'. 'EstudiosController@index')->name('estudios');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix'=>'api'], function (){
     Route::apiResource('usuarios', UsuariosController::class);
